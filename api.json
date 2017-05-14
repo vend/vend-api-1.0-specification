@@ -1,0 +1,1538 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "API 1.0",
+    "description": "Deprecated, experimental Vend API. \nPayloads in this API are identical as payloads delivered in webhooks.",
+    "x-stoplight": {
+      "id": "vend/specs/api-1-0"
+    }
+  },
+  "x-explorer-enabled": false,
+  "host": "domain_prefix.vendhq.com",
+  "basePath": "/api/1.0",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/consignment/{consignment_id}": {
+      "get": {
+        "description": "Returns a single consignment with the given ID.",
+        "summary": "Get a single consignment by ID",
+        "tags": [
+          "Consignments"
+        ],
+        "operationId": "GetConsignmentByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "consignment_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing consignment."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Consignment"
+            }
+          }
+        }
+      }
+    },
+    "/consignment_product/{consignment_product_id}": {
+      "get": {
+        "description": "Returns a single consignment product with the given ID.",
+        "summary": "Get a single consignment product by ID",
+        "tags": [
+          "Consignments"
+        ],
+        "operationId": "GetConsignmentProductByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "consignment_product_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing consignment product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ConsignmentProduct"
+            }
+          }
+        }
+      }
+    },
+    "/customer/{customer_id}": {
+      "get": {
+        "description": "Returns a single customer with the given ID.",
+        "summary": "Get a single customer by ID",
+        "tags": [
+          "Customers"
+        ],
+        "operationId": "GetCustomerByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing customer."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            },
+            "examples": {
+              "application/json": {
+                "id": "b8ca3a65-0183-11e4-fbb5-4f73f02a9d1c",
+                "retailer_id": "b1c50056-f019-11e3-a0f5-b8ca3a64f8f4",
+                "customer_code": "Tony-N4ZJ",
+                "customer_group_id": "b1ca8902-f019-11e3-a0f5-b8ca3a64f8f4",
+                "first_name": "Anthony",
+                "last_name": "Stark",
+                "company_name": "Stark Industries Inc",
+                "email": "tony@stark.com",
+                "phone": "+001 555 12345678",
+                "mobile": "+001 485 23456789",
+                "fax": "+001 555 12345345",
+                "balance": "-25840.850",
+                "loyalty_balance": "5809.64000",
+                "enable_loyalty": true,
+                "points": 0,
+                "note": "",
+                "year_to_date": "0.00000",
+                "sex": "M",
+                "date_of_birth": "1963-03-03",
+                "custom_field_1": "test",
+                "custom_field_2": "",
+                "custom_field_3": "",
+                "custom_field_4": "",
+                "updated_at": "2017-01-19 16:49:35",
+                "created_at": "2014-10-09 05:20:09",
+                "deleted_at": null,
+                "contact": {
+                  "first_name": "Anthony",
+                  "last_name": "Stark",
+                  "company_name": "Stark Industries Inc",
+                  "phone": "+001 555 12345678",
+                  "mobile": "+001 485 23456789",
+                  "fax": "+001 555 12345345",
+                  "email": "tony@stark.com",
+                  "twitter": "@ironman",
+                  "website": "http://www.starkinc.com",
+                  "physical_address1": "Street 1",
+                  "physical_address2": "Street 2",
+                  "physical_suburb": "Suburb",
+                  "physical_city": "Los Angeles",
+                  "physical_postcode": "23422",
+                  "physical_state": "California",
+                  "physical_country_id": "NZ",
+                  "postal_address1": "Street 1",
+                  "postal_address2": "Street 2",
+                  "postal_suburb": "Suburb",
+                  "postal_city": "Los Angeles",
+                  "postal_postcode": "23422",
+                  "postal_state": "California",
+                  "postal_country_id": "NZ"
+                },
+                "contact_first_name": "Anthony",
+                "contact_last_name": "Stark"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/{product_id}": {
+      "get": {
+        "description": "Returns a single product with the given ID.",
+        "summary": "Get a single product by ID",
+        "tags": [
+          "Products"
+        ],
+        "operationId": "GetProductByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing product."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        }
+      }
+    },
+    "/product_type/{product_type_id}": {
+      "get": {
+        "description": "Returns a single product type with the given ID.",
+        "summary": "Get a single product type by ID",
+        "tags": [
+          "Products"
+        ],
+        "operationId": "GetProductTypeByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product_type_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing product type."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProductType"
+            }
+          }
+        }
+      }
+    },
+    "/register_sale/{register_sale_id}": {
+      "get": {
+        "description": "Returns a single sale with the given ID.",
+        "summary": "Get a single sale by ID",
+        "tags": [
+          "Register Sales"
+        ],
+        "operationId": "GetSaleByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "register_sale_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing sale."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegisterSale"
+            }
+          }
+        }
+      }
+    },
+    "/supplier/{supplier_id}": {
+      "get": {
+        "description": "Returns a single supplier with the given ID.",
+        "summary": "Get a single supplier by ID",
+        "tags": [
+          "Suppliers"
+        ],
+        "operationId": "GetSupplierByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "supplier_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing supplier."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Supplier"
+            }
+          }
+        }
+      }
+    },
+    "/user/{user_id}": {
+      "get": {
+        "description": "Returns a single user with the given ID.",
+        "summary": "Get a single user by ID",
+        "tags": [
+          "Users"
+        ],
+        "operationId": "GetUserByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "A valid ID of an existing user."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Consignment": {
+      "title": "Consignment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the consignment.",
+          "type": "string"
+        },
+        "consignment_date": {
+          "description": "The date when the consignment was created.",
+          "type": "string"
+        },
+        "due_at": {
+          "description": "The date when the consignment is due to be delivered.",
+          "type": "string"
+        },
+        "received_at": {
+          "description": "The date when the consignment was delivered.",
+          "type": "string"
+        },
+        "retailer_id": {
+          "description": "The ID of the retailer associated with this consignment.",
+          "type": "string"
+        },
+        "outlet_id": {
+          "description": "The ID of the outlet to which the goods are coming.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "supplier_id": {
+          "description": "The ID of the supplier associated with this consignment.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "source_outlet_id": {
+          "description": "The ID of the outlet from which the goods are coming. Only used for stock transfers.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "description": "Status of the consignment. One of: `OPEN`, `SENT`, `RECEIVED`, `CANCELLED`,  `STOCKTAKE`, `STOCKTAKE_COMPLETE`.",
+          "type": "string"
+        },
+        "type": {
+          "description": "The type of the consignment. One of:  `SUPPLIER`, `OUTLET`, `STOCKTAKE`.",
+          "type": "string"
+        },
+        "accounts_transaction_id": {
+          "description": "The ID of a transaction in an external system associated with this consignment.",
+          "type": "string"
+        }
+      }
+    },
+    "ConsignmentProduct": {
+      "title": "Consignment Product",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "consignment_id": {
+          "description": "The ID of the consignment associated with this item.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "product_id": {
+          "description": "The ID of the product associated with this item.",
+          "type": "string"
+        },
+        "count": {
+          "description": "Quantity \"ordered\" for stock orders or \"expected\" for stock takes.",
+          "type": "string"
+        },
+        "received": {
+          "description": "Quantity \"received\" for stock orders or \"counted\" for stock takes.",
+          "type": "string"
+        },
+        "cost": {
+          "description": "Supply cost of the item for this consignment.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "sequence_number": {
+          "description": "Sequence order number for the item.",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Contact": {
+      "title": "Contact",
+      "type": "object",
+      "description": "An object containing this  customer's or supplier's contact details.",
+      "properties": {
+        "first_name": {
+          "description": "Contact's first name.",
+          "type": "string"
+        },
+        "last_name": {
+          "description": "Contact's last name.",
+          "type": "string"
+        },
+        "company_name": {
+          "description": "Contact's company name.",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Contact's phone number.",
+          "type": "string"
+        },
+        "mobile": {
+          "description": "Contact's mobile phone number.",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Contact's fax number",
+          "type": "string"
+        },
+        "email": {
+          "description": "Contact's email address.",
+          "type": "string"
+        },
+        "twitter": {
+          "description": "Contact's Twitter handle.",
+          "type": "string"
+        },
+        "website": {
+          "description": "The URL of the contact's website.",
+          "type": "string"
+        },
+        "physical_address1": {
+          "description": "Address, line 1 - physical.",
+          "type": "string"
+        },
+        "physical_address2": {
+          "description": "Address, line 2 - physical.",
+          "type": "string"
+        },
+        "physical_suburb": {
+          "description": "Suburb - physical.",
+          "type": "string"
+        },
+        "physical_city": {
+          "description": "City - physical.",
+          "type": "string"
+        },
+        "physical_postcode": {
+          "description": "Post code - physical.",
+          "type": "string"
+        },
+        "physical_state": {
+          "description": "State - physical.",
+          "type": "string"
+        },
+        "physical_country_id": {
+          "description": "Country code - physical.",
+          "type": "string"
+        },
+        "postal_address1": {
+          "description": "Address, line 1 - postal.",
+          "type": "string"
+        },
+        "postal_address2": {
+          "description": "Address, line 2 - postal.",
+          "type": "string"
+        },
+        "postal_suburb": {
+          "description": "Suburb - postal.",
+          "type": "string"
+        },
+        "postal_city": {
+          "description": "City - postal.",
+          "type": "string"
+        },
+        "postal_postcode": {
+          "description": "Post code - postal.",
+          "type": "string"
+        },
+        "postal_state": {
+          "description": "State - postal.",
+          "type": "string"
+        },
+        "postal_country_id": {
+          "description": "Country code - postal",
+          "type": "string"
+        }
+      }
+    },
+    "Customer": {
+      "title": "Customer",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "retailer_id": {
+          "description": "The ID of the retailer associated with this customer.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "customer_code": {
+          "description": "Short, unique customer code.",
+          "type": "string"
+        },
+        "customer_group_id": {
+          "description": "The ID of the customer group this customer belongs to.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "first_name": {
+          "description": "Customer's first name.",
+          "type": "string"
+        },
+        "last_name": {
+          "description": "Customer's last name.",
+          "type": "string"
+        },
+        "company_name": {
+          "description": "Customer's company name.",
+          "type": "string"
+        },
+        "email": {
+          "description": "Customer's email address.",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Customer's phone number.",
+          "type": "string"
+        },
+        "mobile": {
+          "description": "Customer's mobile phone number.",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Customer's fax number.",
+          "type": "string"
+        },
+        "balance": {
+          "description": "Customer's owing balance.",
+          "type": "string"
+        },
+        "loyalty_balance": {
+          "description": "Customer's current loyalty balance.",
+          "type": "string"
+        },
+        "enable_loyalty": {
+          "description": "Indicates whether customer's purchases should incur loyalty.",
+          "type": "boolean"
+        },
+        "points": {
+          "description": "**deprecated** Please ignore.",
+          "type": "number"
+        },
+        "note": {
+          "description": "Customer related notes.",
+          "type": "string"
+        },
+        "year_to_date": {
+          "description": "Customer's total spending this year.",
+          "type": "string"
+        },
+        "sex": {
+          "description": "Customer's gender.",
+          "type": "string"
+        },
+        "date_of_birth": {
+          "description": "Customer's date of birth.",
+          "type": "string"
+        },
+        "custom_field_1": {
+          "description": "Custom field 1, able to store any data as a string.",
+          "type": "string"
+        },
+        "custom_field_2": {
+          "description": "Custom field 2, able to store any data as a string.",
+          "type": "string"
+        },
+        "custom_field_3": {
+          "description": "Custom field 3, able to store any data as a string.",
+          "type": "string"
+        },
+        "custom_field_4": {
+          "description": "Custom field 4, able to store any data as a string.",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "The last update timestamp.",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "Creation timestamp.",
+          "type": "string"
+        },
+        "deleted_at": {
+          "description": "The object deletion timestamp.",
+          "type": "string"
+        },
+        "contact": {
+          "$ref": "#/definitions/Contact"
+        }
+      }
+    },
+    "CustomerBase": {
+      "title": "Customer Base",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "customer_code": {
+          "description": "Short, unique customer code.",
+          "type": "string"
+        },
+        "customer_group_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The ID of the customer group this customer belongs to."
+        },
+        "first_name": {
+          "description": "Customer's first name.",
+          "type": "string"
+        },
+        "last_name": {
+          "description": "Customer's last name.",
+          "type": "string"
+        },
+        "company_name": {
+          "description": "Customer's company name.",
+          "type": "string"
+        },
+        "email": {
+          "description": "Customer's email address.",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Customer's phone number.",
+          "type": "string"
+        },
+        "mobile": {
+          "description": "Customer's mobile phone number.",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Customer's fax number.",
+          "type": "string"
+        },
+        "balance": {
+          "description": "Customer's owing balance.",
+          "type": "string"
+        },
+        "loyalty_balance": {
+          "description": "Customer's current loyalty balance.",
+          "type": "string"
+        },
+        "enable_loyalty": {
+          "description": "Indicates whether customer's purchases should incur loyalty.",
+          "type": "boolean"
+        },
+        "points": {
+          "description": "**deprecated** Please ignore.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "note": {
+          "description": "Customer related notes.",
+          "type": "string"
+        },
+        "year_to_date": {
+          "description": "Customer's total spending this year.",
+          "type": "string"
+        },
+        "sex": {
+          "description": "Customer's gender.",
+          "type": "string"
+        },
+        "date_of_birth": {
+          "description": "Customer's date of birth.",
+          "type": "string"
+        },
+        "custom_field_1": {
+          "description": "Custom field 1, able to store any data as a string.",
+          "type": "string"
+        },
+        "custom_field_2": {
+          "description": "Custom field 2, able to store any data as a string.",
+          "type": "string"
+        },
+        "custom_field_3": {
+          "description": "Custom field 3, able to store any data as a string.",
+          "type": "string"
+        },
+        "custom_field_4": {
+          "description": "Custom field 4, able to store any data as a string.",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "The last update timestamp.",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "Creation timestamp.",
+          "type": "string"
+        },
+        "deleted_at": {
+          "description": "The object deletion timestamp.",
+          "type": "string"
+        }
+      }
+    },
+    "EmbeddedProductType": {
+      "title": "Embedded Product Type",
+      "type": "object",
+      "description": "The product type associated with the product.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "The name of the product type.",
+          "type": "string"
+        }
+      }
+    },
+    "InventoryRecord": {
+      "title": "Inventory Record",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "outlet_id": {
+          "description": "The ID of an outlet associated with this inventory record.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "attributed_cost": {
+          "description": "Current attributed cost for the product.",
+          "type": "string"
+        },
+        "count": {
+          "description": "Current stock quantity of the product at the given outlet.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "reorder_point": {
+          "description": "Quantity below which the product should be included in the auto-filled stock orders.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "restock_level": {
+          "description": "The default of the quantity for auto-filled stock orders",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "PriceBookEntry": {
+      "title": "Price Book Entry",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object id.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "product_id": {
+          "description": "ID of the product associated with this record.",
+          "type": "string"
+        },
+        "max_units": {
+          "description": "Maximum product quantity for which this price book entry will be used.",
+          "type": "string"
+        },
+        "min_units": {
+          "description": "Minimum product quantity for which this price book entry will be used.",
+          "type": "string"
+        },
+        "price": {
+          "description": "Tax exclusive price of the product.",
+          "type": "string"
+        },
+        "valid_from": {
+          "description": "The date/time from which this price is valid.",
+          "type": "string"
+        },
+        "valid_to": {
+          "description": "The date/time to which this price is valid.",
+          "type": "string"
+        },
+        "tax": {
+          "description": "The tax value.",
+          "type": "string"
+        },
+        "type": {
+          "description": "**internal** One of: `BASE`",
+          "type": "string"
+        },
+        "customer_group_id": {
+          "description": "The ID of the customer group associated with this record.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "customer_group_name": {
+          "description": "The name of the customer group associated with this record.",
+          "type": "string"
+        },
+        "tax_id": {
+          "description": "The ID of the tax associated with this record.",
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "Product": {
+      "title": "Product",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "retailer_id": {
+          "description": "The ID of the retailer associated with this product.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "sku": {
+          "description": "The SKU of the product.",
+          "type": "string"
+        },
+        "handle": {
+          "description": "The handle of the product.",
+          "type": "string"
+        },
+        "variant_parent_id": {
+          "description": "The ID of a parent product, if the product is a variant child.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "variant_options": {
+          "description": "A list of variant options.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VariantOption"
+          }
+        },
+        "source": {
+          "description": "**internal** One of: `USER`, `SYSTEM`.",
+          "type": "string"
+        },
+        "source_id": {
+          "description": "The ID that can be used to reference a product in another system.",
+          "type": "string"
+        },
+        "source_variant_id": {
+          "description": "The ID that can be used to reference a product variant in another system.",
+          "type": "string"
+        },
+        "active": {
+          "description": "Indicates whether the product is currently active.",
+          "type": "boolean"
+        },
+        "name": {
+          "description": "The name of the product.",
+          "type": "string"
+        },
+        "base_name": {
+          "description": "The root of the product's name as defined by the user in the UI. Doesn't include any variant related suffixes.",
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the product. May include HTML.",
+          "type": "string"
+        },
+        "attributed_cost": {
+          "description": "The current attributed cost of the product.",
+          "type": "string"
+        },
+        "supply_price": {
+          "description": "The default cost of supply for the product.",
+          "type": "string"
+        },
+        "deleted_at": {
+          "description": "The deletion timestamp.",
+          "type": "string"
+        },
+        "button_order": {
+          "description": "A number describing the position of a variant in the UI.",
+          "type": "string"
+        },
+        "product_type": {
+          "$ref": "#/definitions/EmbeddedProductType"
+        },
+        "supplier": {
+          "$ref": "#/definitions/ProductSupplier"
+        },
+        "brand": {
+          "$ref": "#/definitions/ProductBrand"
+        },
+        "price_book_entries": {
+          "description": "A list of price book entries associated with the product.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PriceBookEntry"
+          }
+        },
+        "inventory": {
+          "description": "A list of inventory records associated with the product.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InventoryRecord"
+          }
+        },
+        "taxes": {
+          "description": "A list of outlet taxes associated with the product.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductTax"
+          }
+        },
+        "categories": {
+          "description": "A list of categories (tags) associated with the product.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ProductCategory"
+          }
+        }
+      }
+    },
+    "ProductBrand": {
+      "title": "Product Brand",
+      "type": "object",
+      "description": "The brand associated with the product.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "The name of the Brand associated with the product.",
+          "type": "string"
+        }
+      }
+    },
+    "ProductCategory": {
+      "title": "Product Category",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the category (tag).",
+          "type": "string"
+        },
+        "version": {
+          "description": "Object's version number.",
+          "type": "string"
+        },
+        "deleted_at": {
+          "description": "The deletion timestamp.",
+          "type": "string"
+        }
+      }
+    },
+    "ProductSupplier": {
+      "title": "Product Supplier",
+      "type": "object",
+      "description": "The supplier associated with the product.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the supplier.",
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the supplier.",
+          "type": "string"
+        },
+        "source": {
+          "description": "**internal** One of: `USER`...",
+          "type": "string"
+        }
+      }
+    },
+    "ProductTax": {
+      "title": "Product Tax",
+      "type": "object",
+      "properties": {
+        "outlet_id": {
+          "description": "The ID of the outlet.",
+          "type": "string"
+        },
+        "tax_id": {
+          "description": "The ID of the tax.",
+          "type": "string"
+        }
+      }
+    },
+    "ProductType": {
+      "title": "Product Type",
+      "type": "object",
+      "description": "The product type associated with the product.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "retailer_id": {
+          "description": "The ID of the retailer associated with this product type.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "The name of the product type.",
+          "type": "string"
+        }
+      }
+    },
+    "RegisterSale": {
+      "title": "Register Sale",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "source": {
+          "description": "**internal** One of: `USER`, `SHOPIFY`.",
+          "type": "string"
+        },
+        "source_id": {
+          "description": "The ID of the sale on the client side or another system where the sale was originally created.",
+          "type": "string"
+        },
+        "sale_date": {
+          "description": "The date of the sale. If not provided will be added as the time the sale reached the server.",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status of the sale. One of: `SAVED`, `CLOSED`, `ONACCOUNT`, `LAYBY`, `ONACCOUNT_CLOSED`, `LAYBY_CLOSED`, `VOIDED`.",
+          "type": "string"
+        },
+        "user_id": {
+          "description": "The ID of the user (cashier) who created the sale.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "customer_id": {
+          "description": "The ID of the customer associated with this sale.",
+          "type": "string"
+        },
+        "register_id": {
+          "description": "The ID of the register where the sale was created.",
+          "type": "string"
+        },
+        "invoice_number": {
+          "description": "The invoice number for the sale.",
+          "type": "string"
+        },
+        "short_code": {
+          "description": "Short, unique code to be printed on the receipt for loyalty tracking purposes.",
+          "type": "string"
+        },
+        "totals": {
+          "$ref": "#/definitions/RegisterSaleTotals"
+        },
+        "note": {
+          "description": "A note on the sale entered by the cashier.",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "Last update timestamp.",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "Creation timestamp.",
+          "type": "string"
+        },
+        "customer": {
+          "$ref": "#/definitions/CustomerBase"
+        },
+        "user": {
+          "$ref": "#/definitions/RegisterSaleUser"
+        },
+        "register_sale_products": {
+          "description": "An array of products associated with the sale.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegisterSaleProduct"
+          }
+        },
+        "register_sale_payments": {
+          "description": "An array of payments associated with the sale.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegisterSalePayment"
+          }
+        },
+        "taxes": {
+          "description": "A summary of taxes for the sale.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegisterSaleTax"
+          }
+        }
+      }
+    },
+    "RegisterSaleGlobalPaymentType": {
+      "title": "Register Sale Global Payment Type",
+      "type": "object",
+      "description": "**internal** An object containing additional details of the global payment type.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the global payment type.",
+          "type": "string"
+        },
+        "has_native_support": {
+          "description": "**internal**",
+          "type": "boolean"
+        }
+      }
+    },
+    "RegisterSalePayment": {
+      "title": "Register Sale Payment",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "payment_date": {
+          "description": "The date and time of the payment.",
+          "type": "string"
+        },
+        "amount": {
+          "description": "Payment amount.",
+          "type": "string"
+        },
+        "retailer_payment_type_id": {
+          "description": "The ID of the retailer payment type associated with this payment.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "payment_type_id": {
+          "description": "**internal** The ID of the global payment type associated with this payment.",
+          "type": "string"
+        },
+        "retailer_payment_type": {
+          "$ref": "#/definitions/RegisterSaleRetailerPaymentType"
+        },
+        "payment_type": {
+          "$ref": "#/definitions/RegisterSaleGlobalPaymentType"
+        }
+      }
+    },
+    "RegisterSaleProduct": {
+      "title": "Register Sale Product",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "product_id": {
+          "description": "The ID of the product associated with this line item.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "quantity": {
+          "description": "Quantity of products for the line item.",
+          "type": "number"
+        },
+        "price": {
+          "description": "Unit price of the line item.",
+          "type": "string"
+        },
+        "discount": {
+          "description": "Unit discount value for the line item.",
+          "type": "string"
+        },
+        "loyalty_value": {
+          "description": "The value of loyalty that will be incurred by the customer for this line item.",
+          "type": "string"
+        },
+        "price_set": {
+          "description": "Indicated whether the price was \"fixed\". If set to `\"1\"` it prevents recalculation of the total price based on the price from the database. One of `\"0\"` or `\"1\"`.",
+          "type": "boolean"
+        },
+        "tax": {
+          "description": "The unit tax value associated with this line item.",
+          "type": "string"
+        },
+        "price_total": {
+          "description": "Total price for this line item. (`price * quantity`).",
+          "type": "string"
+        },
+        "tax_total": {
+          "description": "Total tax for this line item. (`tax * quantity`).",
+          "type": "string"
+        },
+        "attributes": {
+          "description": "Additional line item attributes.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RegisterSaleProductAttribute"
+          }
+        },
+        "tax_id": {
+          "description": "The ID of the tax associated with this line item.",
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "RegisterSaleProductAttribute": {
+      "title": "Register Sale Product Attribute",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of the attribute. Currently one of: `item_note`, `is_return`.",
+          "type": "string"
+        },
+        "value": {
+          "description": "The value of the attribute.",
+          "type": "string"
+        }
+      }
+    },
+    "RegisterSaleRetailerPaymentType": {
+      "title": "Register Sale Retailer Payment Type",
+      "type": "object",
+      "description": "An object containing additional details of the retailer payment type.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string"
+        },
+        "name": {
+          "description": "The name of the payment type as defined by the user.",
+          "type": "string"
+        },
+        "payment_type_id": {
+          "description": "**internal** The ID of the global payment type.",
+          "type": "string"
+        },
+        "config": {
+          "$ref": "#/definitions/RegisterSaleRetailerPaymentTypeConfig"
+        }
+      }
+    },
+    "RegisterSaleRetailerPaymentTypeConfig": {
+      "title": "Register Sale Retailer Payment Type Config",
+      "type": "object",
+      "description": "Additional payment type configuration attributes.",
+      "properties": {
+        "url": {
+          "description": "The URL of an external gateway",
+          "type": "string"
+        }
+      }
+    },
+    "RegisterSaleTax": {
+      "title": "Register Sale Tax",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "The name of the tax.",
+          "type": "string"
+        },
+        "rate": {
+          "description": "The rate of the tax. `100% = 1.0`.",
+          "type": "string"
+        },
+        "tax": {
+          "description": "The total tax value for this tax.",
+          "type": "string"
+        }
+      }
+    },
+    "RegisterSaleTotals": {
+      "title": "Register Sale Totals",
+      "type": "object",
+      "description": "An object containing sale totals summary.",
+      "properties": {
+        "total_price": {
+          "description": "Total price for this sale.",
+          "type": "string"
+        },
+        "total_loyalty": {
+          "description": "Total loyalty value for the sale.",
+          "type": "string"
+        },
+        "total_tax": {
+          "description": "Total tax value for this sale.",
+          "type": "string"
+        },
+        "total_payment": {
+          "description": "Total payment value for the sale.",
+          "type": "string"
+        },
+        "total_to_pay": {
+          "description": "Total outstanding payment value.",
+          "type": "string"
+        }
+      }
+    },
+    "RegisterSaleUser": {
+      "title": "Register Sale User",
+      "type": "object",
+      "description": "The user associated with the sale.",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "User's name.",
+          "type": "string"
+        },
+        "display_name": {
+          "description": "User's display name.",
+          "type": "string"
+        },
+        "email": {
+          "description": "User's email address",
+          "type": "string"
+        },
+        "outlet_id": {
+          "description": "The ID of the outlet this user is assigned to.",
+          "type": "string"
+        },
+        "target_daily": {
+          "description": "User's daily sales target.",
+          "type": "string"
+        },
+        "target_weekly": {
+          "description": "User's weekly sales target.",
+          "type": "string"
+        },
+        "target_monthly": {
+          "description": "User's monthly sales target.",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "Creation timestamp.",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "Last update timestamp.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "Supplier": {
+      "title": "Supplier",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "retailer_id": {
+          "description": "The ID of the retailer associated with this supplier.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "The name of the supplier.",
+          "type": "string"
+        },
+        "description": {
+          "description": "The description of the supplier.",
+          "type": "string"
+        },
+        "source": {
+          "description": "**internal** One of: `USER`, `SYSTEM`.",
+          "type": "string"
+        },
+        "contact": {
+          "$ref": "#/definitions/Contact"
+        }
+      }
+    },
+    "User": {
+      "title": "User",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "retailer_id": {
+          "description": "The ID of the retailer associated with this user.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "User's name.",
+          "type": "string"
+        },
+        "display_name": {
+          "description": "User's display name.",
+          "type": "string"
+        },
+        "email": {
+          "description": "User's email address",
+          "type": "string"
+        },
+        "outlet_id": {
+          "description": "**deprecated** The ID of the outlet this user is assigned to.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "target_daily": {
+          "description": "User's daily sales target.",
+          "type": "string"
+        },
+        "target_weekly": {
+          "description": "User's weekly sales target.",
+          "type": "string"
+        },
+        "target_monthly": {
+          "description": "User's monthly sales target.",
+          "type": "string"
+        },
+        "created_at": {
+          "description": "Creation timestamp.",
+          "type": "string"
+        },
+        "updated_at": {
+          "description": "Last update timestamp.",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/UserImage"
+        }
+      },
+      "required": [
+        "id",
+        "retailer_id"
+      ]
+    },
+    "UserImage": {
+      "title": "User Image",
+      "type": "object",
+      "properties": {
+        "url": {
+          "description": "The URL of the user's avatar.",
+          "type": "string"
+        }
+      }
+    },
+    "VariantOption": {
+      "title": "Variant Option",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto-generated object ID.",
+          "type": "string",
+          "format": "uuid"
+        },
+        "name": {
+          "description": "The name of the variant option, e.g. `Size`.",
+          "type": "string"
+        },
+        "value": {
+          "description": "The value of the variant option, e.g. `medium`.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
