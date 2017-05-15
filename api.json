@@ -47,6 +47,22 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/Consignment"
+            },
+            "examples": {
+              "application/json": {
+                "id": "0af7b240-ab83-11e7-eddc-38e5215a314f",
+                "name": "API test 2 changed",
+                "consignment_date": "2017-05-14 20:37:21",
+                "due_at": "2017-06-01 00:00:00",
+                "received_at": null,
+                "retailer_id": "b1c50056-f019-11e3-a0f5-b8ca3a64f8f4",
+                "outlet_id": "b1e04bd8-f019-11e3-a0f5-b8ca3a64f8f4",
+                "supplier_id": null,
+                "source_outlet_id": null,
+                "status": "OPEN",
+                "type": "SUPPLIER",
+                "accounts_transaction_id": null
+              }
             }
           }
         }
@@ -78,6 +94,17 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/ConsignmentProduct"
+            },
+            "examples": {
+              "application/json": {
+                "id": "b8ca3a65-0183-11e4-fbb5-8567ab592f7f",
+                "consignment_id": "b8ca3a65-0183-11e4-fbb5-8567a74f81ca",
+                "product_id": "188a87aa-06fe-11e4-a0f5-b8ca3a64f8f4",
+                "count": "1.00000",
+                "received": "1.00000",
+                "cost": 100,
+                "sequence_number": 1
+              }
             }
           }
         }
@@ -197,6 +224,104 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/Product"
+            },
+            "examples": {
+              "application/json": {
+                "id": "b1db66d5-f019-11e3-a0f5-b8ca3a64f8f4",
+                "retailer_id": "b1c50056-f019-11e3-a0f5-b8ca3a64f8f4",
+                "sku": "coffee-hot",
+                "handle": "coffeeupdatetest",
+                "variant_parent_id": null,
+                "variant_options": [],
+                "source": "SAMPLE",
+                "source_id": "source test",
+                "source_variant_id": "source variant test",
+                "active": true,
+                "name": "Coffee (Demo)",
+                "base_name": "Coffee (Demo)",
+                "description": "<p>A cup of Coffee. You can delete this once you have some other products setup.</p>",
+                "attributed_cost": "0.32",
+                "supply_price": "0.00",
+                "deleted_at": null,
+                "button_order": "2",
+                "supplier": {
+                  "id": "b1e28eed-f019-11e3-a0f5-b8ca3a64f8f4",
+                  "name": "Supplier post test",
+                  "description": "",
+                  "source": ""
+                },
+                "brand": {
+                  "id": "b1e2624f-f019-11e3-a0f5-b8ca3a64f8f4",
+                  "name": "Generic Brand"
+                },
+                "price_book_entries": [
+                  {
+                    "id": "b1e81e2c-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "product_id": "b1db66d5-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "max_units": null,
+                    "min_units": null,
+                    "price": "2.60870",
+                    "valid_from": null,
+                    "valid_to": null,
+                    "tax": "0.39131",
+                    "type": "BASE",
+                    "customer_group_id": "b1ca8902-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "customer_group_name": "All Customers",
+                    "tax_id": "b1d192bc-f019-11e3-a0f5-b8ca3a64f8f4"
+                  }
+                ],
+                "inventory": [
+                  {
+                    "id": "34812c7f-e07a-51c1-af45-1d310bb09790",
+                    "product_id": "b1db66d5-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "outlet_id": "b1e04bd8-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "attributed_cost": "1.33",
+                    "count": 25,
+                    "reorder_point": null,
+                    "restock_level": null
+                  },
+                  {
+                    "id": "5152b0e0-889d-2f0e-739a-518e8ade183e",
+                    "product_id": "b1db66d5-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "outlet_id": "b8ca3a65-0183-11e4-fbb5-2816d2677218",
+                    "attributed_cost": "0.00",
+                    "count": 96,
+                    "reorder_point": null,
+                    "restock_level": null
+                  },
+                  {
+                    "id": "6fd22c9e-0be8-8607-c26c-f1127e492313",
+                    "product_id": "b1db66d5-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "outlet_id": "06bf537b-c783-11e6-f6b9-53a81bd6b215",
+                    "attributed_cost": "0.00",
+                    "count": 0,
+                    "reorder_point": null,
+                    "restock_level": null
+                  }
+                ],
+                "taxes": [
+                  {
+                    "outlet_id": "b1e04bd8-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "tax_id": "b1d192bc-f019-11e3-a0f5-b8ca3a64f8f4"
+                  },
+                  {
+                    "outlet_id": "b8ca3a65-0183-11e4-fbb5-2816d2677218",
+                    "tax_id": "b1d192bc-f019-11e3-a0f5-b8ca3a64f8f4"
+                  },
+                  {
+                    "outlet_id": "06bf537b-c783-11e6-f6b9-53a81bd6b215",
+                    "tax_id": "b1d192bc-f019-11e3-a0f5-b8ca3a64f8f4"
+                  }
+                ],
+                "categories": [
+                  {
+                    "id": "b1e2e709-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "name": "General",
+                    "version": "600569",
+                    "deleted_at": null
+                  }
+                ]
+              }
             }
           }
         }
@@ -228,6 +353,13 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/ProductType"
+            },
+            "examples": {
+              "application/json": {
+                "id": "06bf537b-c783-11e6-ff13-fa2e7823c520",
+                "retailer_id": "b1c50056-f019-11e3-a0f5-b8ca3a64f8f4",
+                "name": "Hot sandwiches"
+              }
             }
           }
         }
@@ -259,6 +391,144 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/RegisterSale"
+            },
+            "examples": {
+              "new": {
+                "id": "06bf537b-c783-11e7-ff13-33747f16c126",
+                "source": "USER",
+                "source_id": null,
+                "sale_date": "2017-05-07 22:28:39",
+                "status": "CLOSED",
+                "user_id": "b1ed6158-f019-11e3-a0f5-b8ca3a64f8f4",
+                "customer_id": "b1cabb53-f019-11e3-a0f5-b8ca3a64f8f4",
+                "register_id": "b1e198a9-f019-11e3-a0f5-b8ca3a64f8f4",
+                "market_id": "1",
+                "invoice_number": "MR-1708-NZ",
+                "short_code": "pbuuap",
+                "totals": {
+                  "total_price": "-1200.00000",
+                  "total_loyalty": "-138.00000",
+                  "total_tax": "-180.00000",
+                  "total_payment": "-1380.00000",
+                  "total_to_pay": "0.00000"
+                },
+                "note": "",
+                "updated_at": "2017-05-07 22:28:43",
+                "created_at": "2017-05-07 22:28:29",
+                "customer": {
+                  "id": "b1cabb53-f019-11e3-a0f5-b8ca3a64f8f4",
+                  "customer_code": "WALKIN",
+                  "customer_group_id": "b1ca8902-f019-11e3-a0f5-b8ca3a64f8f4",
+                  "first_name": null,
+                  "last_name": null,
+                  "company_name": null,
+                  "email": null,
+                  "phone": null,
+                  "mobile": null,
+                  "fax": null,
+                  "balance": "0.000",
+                  "loyalty_balance": "0.00000",
+                  "enable_loyalty": false,
+                  "points": 0,
+                  "note": null,
+                  "year_to_date": "669.46002",
+                  "sex": null,
+                  "date_of_birth": null,
+                  "custom_field_1": null,
+                  "custom_field_2": null,
+                  "custom_field_3": null,
+                  "custom_field_4": null,
+                  "updated_at": "2014-08-01 00:14:49",
+                  "created_at": "2014-06-09 21:04:49",
+                  "deleted_at": null,
+                  "contact_first_name": null,
+                  "contact_last_name": null
+                },
+                "user": {
+                  "id": "b1ed6158-f019-11e3-a0f5-b8ca3a64f8f4",
+                  "name": "api@vendhq.com",
+                  "display_name": "Dev Rel",
+                  "email": "api@vendhq.com",
+                  "outlet_id": null,
+                  "target_daily": "1000",
+                  "target_weekly": "10000",
+                  "target_monthly": "50000",
+                  "created_at": "2014-06-09 21:04:50",
+                  "updated_at": "2017-05-01 20:36:40"
+                },
+                "register_sale_products": [
+                  {
+                    "id": "06bf537b-c783-11e7-ff13-33747f1362d8",
+                    "product_id": "b8ca3a65-0183-11e4-fbb5-6ba391393b6e",
+                    "quantity": -1,
+                    "price": "1200.00000",
+                    "discount": "-115.00000",
+                    "loyalty_value": "138.00000",
+                    "price_set": true,
+                    "tax": "180.00000",
+                    "price_total": "-1200",
+                    "tax_total": "-180",
+                    "attributes": [
+                      {
+                        "name": "is_return",
+                        "value": "1"
+                      }
+                    ],
+                    "tax_id": "b1d192bc-f019-11e3-a0f5-b8ca3a64f8f4"
+                  }
+                ],
+                "register_sale_payments": [
+                  {
+                    "id": "a604d16b-a999-a806-11e7-337484b764bc",
+                    "payment_date": "2017-05-07 22:28:39",
+                    "amount": "-1380.00000",
+                    "retailer_payment_type_id": "b1e1d70e-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "payment_type_id": "1",
+                    "retailer_payment_type": {
+                      "id": "b1e1d70e-f019-11e3-a0f5-b8ca3a64f8f4",
+                      "name": "Cash",
+                      "payment_type_id": "1",
+                      "config": null
+                    },
+                    "payment_type": {
+                      "id": "1",
+                      "name": "Cash",
+                      "has_native_support": false
+                    },
+                    "register_sale": {
+                      "id": "06bf537b-c783-11e7-ff13-33747f16c126",
+                      "source": "USER",
+                      "source_id": null,
+                      "sale_date": "2017-05-07 22:28:39",
+                      "status": "CLOSED",
+                      "user_id": "b1ed6158-f019-11e3-a0f5-b8ca3a64f8f4",
+                      "customer_id": "b1cabb53-f019-11e3-a0f5-b8ca3a64f8f4",
+                      "register_id": "b1e198a9-f019-11e3-a0f5-b8ca3a64f8f4",
+                      "market_id": "1",
+                      "invoice_number": "MR-1708-NZ",
+                      "short_code": "pbuuap",
+                      "totals": {
+                        "total_price": "-1200.00000",
+                        "total_loyalty": "-138.00000",
+                        "total_tax": "-180.00000",
+                        "total_payment": "-1380.00000",
+                        "total_to_pay": "0.00000"
+                      },
+                      "note": "",
+                      "updated_at": "2017-05-07 22:28:43",
+                      "created_at": "2017-05-07 22:28:29"
+                    }
+                  }
+                ],
+                "taxes": [
+                  {
+                    "id": "b1dfed8b-f019-11e3-a0f5-b8ca3a64f8f4",
+                    "name": "GST",
+                    "rate": "0.150000",
+                    "tax": "-180.00000"
+                  }
+                ]
+              }
             }
           }
         }
@@ -290,6 +560,40 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/Supplier"
+            },
+            "examples": {
+              "application/json": {
+                "id": "06bf537b-c783-11e6-ff13-fa2e901995b7",
+                "retailer_id": "b1c50056-f019-11e3-a0f5-b8ca3a64f8f4",
+                "name": "Bob's burgers",
+                "description": "The best supplier of super burgers",
+                "source": "",
+                "contact": {
+                  "first_name": "Bob",
+                  "last_name": "Bobington",
+                  "company_name": "Dudesons",
+                  "phone": "+1 123 45679876",
+                  "mobile": "+1 456 45679876",
+                  "fax": "+1 123 45679877",
+                  "email": "bob@bocsburgers.com",
+                  "twitter": "@bobsburgers",
+                  "website": "www.bobsburgers.com",
+                  "physical_address1": "12 Deadbeef Drive",
+                  "physical_address2": "",
+                  "physical_suburb": "Meadowbank",
+                  "physical_city": "San Diego",
+                  "physical_postcode": "43567",
+                  "physical_state": "California",
+                  "physical_country_id": "US",
+                  "postal_address1": "12 Deadbeef Drive",
+                  "postal_address2": "",
+                  "postal_suburb": "Meadowbank",
+                  "postal_city": "San Diego",
+                  "postal_postcode": "43567",
+                  "postal_state": "California",
+                  "postal_country_id": "US"
+                }
+              }
             }
           }
         }
@@ -321,6 +625,24 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/User"
+            },
+            "examples": {
+              "application/json": {
+                "id": "b1ed6158-f019-11e3-a0f5-b8ca3a64f8f4",
+                "retailer_id": "b1c50056-f019-11e3-a0f5-b8ca3a64f8f4",
+                "name": "api@vendhq.com",
+                "display_name": "Dev Rel",
+                "email": "api@vendhq.com",
+                "outlet_id": null,
+                "target_daily": "1000",
+                "target_weekly": "10000",
+                "target_monthly": "50000",
+                "created_at": "2014-06-09 21:04:50",
+                "updated_at": "2017-05-01 20:36:40",
+                "image": {
+                  "url": "https://vendimageuploadcdn.global.ssl.fastly.net/150x150/vend-images/user/original/1/b/1ba1099aecfbbcbdfc4aa8efb136507f99a3c0d9.jpg"
+                }
+              }
             }
           }
         }
