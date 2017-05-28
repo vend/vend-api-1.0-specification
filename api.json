@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0",
     "title": "API 1.0",
-    "description": "Deprecated, experimental Vend API. \nPayloads in this API are identical as payloads delivered in webhooks.",
+    "description": "**Deprecated**, experimental Vend API. \nPayloads in this API are identical as payloads delivered in webhooks.",
     "x-stoplight": {
       "id": "vend/specs/api-1-0"
     }
@@ -23,7 +23,7 @@
   "paths": {
     "/consignment/{consignment_id}": {
       "get": {
-        "description": "Returns a single consignment with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single consignment with the given ID.",
         "summary": "Get a single consignment by ID",
         "tags": [
           "Consignments"
@@ -70,7 +70,7 @@
     },
     "/consignment_product/{consignment_product_id}": {
       "get": {
-        "description": "Returns a single consignment product with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single consignment product with the given ID.",
         "summary": "Get a single consignment product by ID",
         "tags": [
           "Consignments"
@@ -112,7 +112,7 @@
     },
     "/customer/{customer_id}": {
       "get": {
-        "description": "Returns a single customer with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single customer with the given ID.",
         "summary": "Get a single customer by ID",
         "tags": [
           "Customers"
@@ -200,7 +200,7 @@
     },
     "/product/{product_id}": {
       "get": {
-        "description": "Returns a single product with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single product with the given ID.",
         "summary": "Get a single product by ID",
         "tags": [
           "Products"
@@ -329,7 +329,7 @@
     },
     "/product_type/{product_type_id}": {
       "get": {
-        "description": "Returns a single product type with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single product type with the given ID.",
         "summary": "Get a single product type by ID",
         "tags": [
           "Products"
@@ -367,7 +367,7 @@
     },
     "/register_sale/{register_sale_id}": {
       "get": {
-        "description": "Returns a single sale with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single sale with the given ID.",
         "summary": "Get a single sale by ID",
         "tags": [
           "Register Sales"
@@ -536,7 +536,7 @@
     },
     "/supplier/{supplier_id}": {
       "get": {
-        "description": "Returns a single supplier with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single supplier with the given ID.",
         "summary": "Get a single supplier by ID",
         "tags": [
           "Suppliers"
@@ -601,7 +601,7 @@
     },
     "/user/{user_id}": {
       "get": {
-        "description": "Returns a single user with the given ID.",
+        "description": "**DEPRECATED** This endpoint has a 2.0 equivalent. We recommend using that instead.\nReturns a single user with the given ID.",
         "summary": "Get a single user by ID",
         "tags": [
           "Users"
@@ -907,7 +907,7 @@
           "type": "boolean"
         },
         "points": {
-          "description": "**deprecated** Please ignore.",
+          "description": "**DEPRECATED** Please ignore.",
           "type": "number"
         },
         "note": {
@@ -1017,7 +1017,7 @@
           "type": "boolean"
         },
         "points": {
-          "description": "**deprecated** Please ignore.",
+          "description": "**DEPRECATED** Please ignore.",
           "type": "integer",
           "format": "int32"
         },
@@ -1794,7 +1794,7 @@
           "type": "string"
         },
         "outlet_id": {
-          "description": "**deprecated** The ID of the outlet this user is assigned to.",
+          "description": "**DEPRECATED** The ID of the outlet this user is assigned to.",
           "type": "string",
           "format": "uuid"
         },
